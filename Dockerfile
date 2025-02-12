@@ -1,7 +1,6 @@
 # Use the official Python image from Docker Hub
 FROM python:3.11-slim
 
-RUN rm -rf .git
 # Set the working directory inside the container
 WORKDIR /home
 
