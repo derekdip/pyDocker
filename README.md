@@ -16,7 +16,7 @@ To build a Docker image from your `Dockerfile`:
 
 `docker build -t my-python-app:latest . `
 
-`docker run -it -v $(pwd):/app my-python-app /bin/bash `
+`docker run -it -v $(pwd):/workspace my-python-app /bin/bash `
 
 ### **Listing files**
 `ls`
