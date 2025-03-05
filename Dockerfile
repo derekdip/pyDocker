@@ -14,12 +14,18 @@ RUN pip install --upgrade pip
 RUN ls 
 RUN pip install -r requirements.txt    
 
+
+# Install Node.js and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get update && \
+    apt-get install -y nodejs
+
+ENV PATH="/usr/local/bin:$PATH"
+
 WORKDIR /opt/full-stack-env/frontend
 RUN npm install
 
 WORKDIR /opt
-
-
 
 
 EXPOSE 3000 8000
@@ -28,4 +34,4 @@ EXPOSE 3000 8000
 # RUN pip install --no-cache-dir -r requirements.txt
 
 # By leaving the CMD blank, we'll let the user specify what file to run
-CMD ["bash"]
+CMD ["python"]
