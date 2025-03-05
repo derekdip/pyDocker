@@ -7,13 +7,7 @@ WORKDIR /workspace
 # Install Git
 RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/derekdip/pyDocker.git /opt/full-stack-env
-
-WORKDIR /opt/full-stack-env/backend
 RUN pip install --upgrade pip
-RUN ls 
-RUN pip install -r requirements.txt    
-
 
 # Install Node.js and npm
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
@@ -21,12 +15,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
     apt-get install -y nodejs
 
 RUN apt-get update && apt-get install -y npm
-
-
-WORKDIR /opt/full-stack-env/frontend
-RUN npm install
-
-WORKDIR /opt
 
 
 EXPOSE 3000 8000
