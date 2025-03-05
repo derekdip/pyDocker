@@ -2,6 +2,8 @@
 
 This `README.md` provides a simple overview of the essential Docker commands to build, run, and interact with your container, along with basic file navigation and Python commands.
 
+remove "" when running the commands, the content is your preference
+
 ---
 
 ## **Docker Commands**
@@ -10,13 +12,12 @@ This `README.md` provides a simple overview of the essential Docker commands to 
 
 To build a Docker image from your `Dockerfile`:
 
-`docker build -t <image_name>:<tag> . `
+`docker build -t "image_name":"tag" . `
 
 ### **Example building then running docker container:**
+`docker build -t full-stack-env:latest . `
 
-`docker build -t my-python-app:latest . `
-
-`docker run -it -v $(pwd):/workspace my-python-app /bin/bash `
+`docker run -it -v $(pwd):/workspace -p 3000:3000 -p 8000:8000 full-stack-env /bin/bash `
 
 ### **Listing files**
 `ls`
